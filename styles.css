@@ -13,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .choices {
@@ -21,6 +22,7 @@ body {
     justify-content: center;
     gap: 20px;
     padding-bottom: 50px;
+
 }
 .choices > button {
     height: 300px;
@@ -46,8 +48,26 @@ body {
   background-color: rgb(136, 111, 104);
   border: 1px #000000 solid;
 }
-.container > .message {
-    width: 80%;
+.container > .information {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+}
+.container > .information > .message {
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 100;
+    font-size: 40px;
+    background: #618CBB;
+    border-radius: 50px;
+    flex: 13;
+}
+.container > .information > .score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 3;
     text-align: center;
     color: #FFFFFF;
     font-weight: 100;
@@ -55,3 +75,4 @@ body {
     background: #618CBB;
     border-radius: 50px;
 }
+
