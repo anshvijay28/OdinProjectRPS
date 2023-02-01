@@ -1,22 +1,15 @@
-choices = ["Rock", "Paper", "Scissors"]; 
-const computerChoice = () => choices[Math.floor(Math.random() * 3)]; 
-const playerChoice = () => capitalize(prompt("Enter your choice: "));
+ 
 
-function capitalize(string) {
-    string = string.trim();
-    const firstLetter = string.charAt(0);
-    const theRest = string.slice(1);
-    return firstLetter.toUpperCase() + theRest.toLowerCase();
-}
+function playRound(player) {
 
-function playRound() {
-    const computer = computerChoice();
-    const player = playerChoice();
-    const message = "The computer picked: " + computer + ". You picked: " + player + ". ";
+    choices = ["Rock", "Paper", "Scissors"]; 
+    const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+    const message = "The computer picked: " + computerChoice + ". You picked: " + player + ". ";
     if (!choices.includes(player)) {
         return "Please enter a valid choice.";
     }
-    if (computer === "Rock") {
+    if (computerChoice === "Rock") {
         if (player === "Rock") {
             return message + "It's a tie!";
         }
@@ -27,7 +20,7 @@ function playRound() {
             return message + "You lose.";
         }
     } 
-    else if (computer === "Paper") {
+    else if (computerChoice === "Paper") {
         if (player === "Rock") {
             return message + "You lose.";
         }
@@ -51,6 +44,10 @@ function playRound() {
         }
     }
 }
-for (let i = 0; i < 5; i++) {
-    console.log(playRound());
-}
+
+const userChoices = document.querySelectorAll('button');
+userChoices.forEach(button => {
+    button.addEventListener('click', e => {
+        console.log(playRound(button.innerText));
+    })
+})
