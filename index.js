@@ -5,49 +5,51 @@ function playRound(player) {
     choices = ["Rock", "Paper", "Scissors"]; 
     const computerChoice = choices[Math.floor(Math.random() * 3)];
 
-    const message = "The computer picked: " + computerChoice + ". You picked: " + player + ". ";
-    if (!choices.includes(player)) {
-        return "Please enter a valid choice.";
-    }
+    const computerMessage = "The computer picked: " + computerChoice;
+    const playerMessage = "You picked: " + player;
+    
     if (computerChoice === "Rock") {
         if (player === "Rock") {
-            return message + "It's a tie!";
+            return [computerMessage, playerMessage, "It's a tie!"];
         }
         else if (player === "Paper") {
-            return message + "You win!";
+            return [computerMessage, playerMessage, "You win!"];
         }
         else {
-            return message + "You lose.";
+            return [computerMessage, playerMessage, "You lose!"]
         }
     } 
     else if (computerChoice === "Paper") {
         if (player === "Rock") {
-            return message + "You lose.";
+            return [computerMessage, playerMessage, "You lose!"]
         }
         else if (player === "Paper") {
-            return message + "It's a tie!";
+            return [computerMessage, playerMessage, "It's a tie!"]
         }
         else {
-            return message + "You win!";
+            return [computerMessage, playerMessage, "You win!"]
         }
     } 
     else {
         if (player === "Rock") {
-            return message + "You win!";
+            return [computerMessage, playerMessage, "You win!"]
         }
         else if (player === "Paper") {
-            return message + "You lose.";
+            return [computerMessage, playerMessage, "You lose!"]
         }
         else {
-            return message + "It's a tie!";
-
+            return [computerMessage, playerMessage, "It's a tie!"]
         }
     }
 }
-
 const userChoices = document.querySelectorAll('button');
+const gameMessage = document.querySelectorAll('#message-text, #player-text, #result-text');
 userChoices.forEach(button => {
     button.addEventListener('click', e => {
-        console.log(playRound(button.innerText));
+        const messages = playRound(button.innerText);
+
+        gameMessage[0].textContent = messages[0];
+        gameMessage[1].textContent = messages[1];
+        gameMessage[2].textContent = messages[2];
     })
 })
