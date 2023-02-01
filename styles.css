@@ -9,15 +9,20 @@ body {
     height: 100vh;
     background-image: url(/Users/anshvijay/Desktop/Odin_Project/rockPaperScissors/images/background.jpg);
 }
-
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choices {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
-.container > button {
+.choices > button {
     height: 300px;
     width: 300px;
     border-radius: 150px;
@@ -29,15 +34,24 @@ body {
     background-color: rgb(136, 111, 104);
 }
 
-.container > button:hover
+.choices > button:hover
 {
   opacity: 1;
   background-color: #8CAAB7;
   border: 1px #99ccff solid;
 }
 
-.container > button:active
+.choices > button:active
 {
   background-color: rgb(136, 111, 104);
   border: 1px #000000 solid;
+}
+.container > .message {
+    width: 80%;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 100;
+    font-size: 40px;
+    background: #618CBB;
+    border-radius: 50px;
 }
