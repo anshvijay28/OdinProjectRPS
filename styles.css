@@ -7,7 +7,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(/Users/anshvijay/Desktop/Odin_Project/rockPaperScissors/images/background.jpg);
+    background-color: #ebd8d0;
+    /* background-image: url(/Users/anshvijay/Desktop/Odin_Project/rockPaperScissors/images/background.jpg); */
 }
 .container {
     display: flex;
